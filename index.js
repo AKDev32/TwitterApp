@@ -1,7 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import { PORT } from './config/serverConfig.js';
-import tweetRouter from './routes/tweet.js';
+import apiRouter from './routes/apiRouter.js';
 
 const app = express();
 console.log(import.meta);
@@ -16,6 +16,7 @@ app.use (express.text());
 app.use (express.urlencoded());
 
 app.use('/tweets', tweetRouter);  // localhost:3000/tweets - Yes
+app.use('/api', apiRouter);  // if the req api starts with /api, use the apiRouter
 
 app.get('/', (req, res) => {
     res.render('index', { name: "Aman Kumar"} );
