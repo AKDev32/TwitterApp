@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
 
-dotenv.config();  // Load environment variable from .env file
+dotenv.config(); // Load environment variables from .env file
 
-export const PORT = process.env.PORT || 3200;  // Default a PORT variable
+export const PORT = process.env.PORT || 3000; // Define a PORT variable

@@ -1,7 +1,7 @@
 import express from 'express';
 import tweetRouter from './tweet.js';
+const router = express.Router(); // Create a new router object
 
-const router = express.Router();  // create a new router object
-router.use('/tweets', tweetRouter); // if the remainingurl starts with /tweet, use the tweet router
+router.use('/tweets', tweetRouter); // if the remaining url starts with /tweet, use the tweet router
 
-export default router;  // Export the router object
+export default router; // Export the router object
