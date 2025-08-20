@@ -1,4 +1,3 @@
-
 import { createTweet as createTweetService } from "../services/tweetService.js";
 
 export const getTweets = (req, res) => {
@@ -27,6 +26,12 @@ export const createTweet = async (req, res) => {
         })
     } catch (error) {
         console.log(error);
+        if (error.status) {
+            return res.status(error.status).json({
+                message: error.message,
+                success: false
+            });
+        }
         return res.status(500).json({
             message: 'Internal server error',
             success: false
